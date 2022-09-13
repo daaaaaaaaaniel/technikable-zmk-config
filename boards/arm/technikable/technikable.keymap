@@ -52,7 +52,7 @@
             label = "Base";
             bindings = <
 #ifdef QWERTY_BASE
- &kp GRAVE  &kp Q      &kp W      &kp E       &kp R          &kp T          &kp Y            &kp U          &kp I       &kp O      &kp P         &kp MINUS
+ &kp GRAVE  &kp Q      &kp W      &kp E       &kp R          &kp T          &kp Y            &kp U          &kp I       &kp O      &kp P         &key_repeat
  &kp TAB    &kp A      &kp S      &kp D       &kp F          &kp G          &kp H            &kp J          &kp K       &kp L      &kp SEMI      &kp QUOT
  &kp LSHFT  &kp Z      &kp X      &kp C       &kp V          &kp B          &kp N            &kp M          &kp COMMA   &kp DOT    &kp FSLH      &kp RSHFT
 #else
@@ -89,8 +89,8 @@
         num_layer {
             label = "Num";
             bindings = <
-&kp ESC    &kp LBKT   &kp N1     &kp N2      &kp N3    &kp RBKT    &kp C_PREV    &trans         &trans       &trans       &trans     &kp EQUAL
-&trans     &kp RBKT   &kp N4     &kp N5      &kp N6    &kp EQUAL   &kp C_NEXT    &trans         &trans       &trans       &trans     &kp LALT
+&kp ESC    &kp LBKT   &kp N1     &kp N2      &kp N3    &kp RBKT    &kp C_PREV    &kp LPAR       &kp RPAR     &kp MINUS    &kp EQUAL  &kp EQUAL
+&trans     &kp RBKT   &kp N4     &kp N5      &kp N6    &kp EQUAL   &kp C_NEXT    &trans         &trans       &kp LBKT     &kp RBKT   &kp LALT
 &kp CAPS   &kp BSLH   &kp N7     &kp N8      &kp N9    &kp BSLH    &trans        &trans         &trans       &trans       &trans     &trans
 #ifdef TBLE_DUAL_2U
                      &trans     &kp N0              &kp MINUS                 &trans            &trans         &trans
