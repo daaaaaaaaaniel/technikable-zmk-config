@@ -105,9 +105,9 @@
         sym_layer {
             label = "Sym";
             bindings = <
-&trans     &kp LBRC   &kp LS(N1) &kp LS(N2)  &kp LS(N3)   &kp RBRC     &trans     &trans     &kp F1      &kp F2       &kp F3     &trans
-&trans     &kp COLON  &kp LS(N4) &kp LS(N5)  &kp LS(N6)   &kp PLUS     &trans     &trans     &kp F4      &kp F5       &kp F6     &trans
-&trans     &kp TILDE  &kp LS(N7) &kp LS(N8)  &kp LS(N9)   &kp LS(BSLH) &trans     &trans     &kp F7      &kp F8       &kp F9     &trans
+&trans     &kp LBRC   &kp LS(N1) &kp LS(N2)  &kp LS(N3)   &kp RBRC     &trans     &trans     &kp F1      &kp F2       &kp F3     &kp RCTRL
+&trans     &kp RBRC   &kp LS(N4) &kp LS(N5)  &kp LS(N6)   &kp PLUS     &trans     &trans     &kp F4      &kp F5       &kp F6     &kp RALT
+&trans     &kp PIPE   &kp LS(N7) &kp LS(N8)  &kp LS(N9)   &kp LS(BSLH) &trans     &trans     &kp F7      &kp F8       &kp F9     &kp RCMD
 #ifdef TBLE_DUAL_2U
                       &trans     &kp LS(N0)              &trans                    &trans       &trans         &trans
 #elif defined(TBLE_MIT)
