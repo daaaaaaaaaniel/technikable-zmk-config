@@ -74,7 +74,7 @@
             label = "Nav";
             bindings = <
 &bt BT_CLR &trans     &trans     &trans      &trans          &trans       &trans     &trans         &kp UARW    &trans     &trans     &kp DEL
-&trans     &trans     &trans     &trans      &trans          &trans       &trans     &kp LARW       &kp DARW    &kp RARW   &trans     &kp RET
+&kp LALT   &trans     &trans     &trans      &trans          &trans       &trans     &kp LARW       &kp DARW    &kp RARW   &trans     &kp RET
 &bt BT(0)  &bt BT(1)  &bt BT(2) &bt BT(3)    &bt BT(4)       &trans       &trans     &kp HOME       &kp PG_DN   &kp PG_UP  &kp END    &trans
 #ifdef TBLE_DUAL_2U
                       &trans     &trans              &trans                    &trans       &trans         &trans
@@ -90,7 +90,7 @@
             label = "Num";
             bindings = <
 &kp ESC    &kp LBKT   &kp N1     &kp N2      &kp N3    &kp RBKT    &kp C_PREV    &trans         &trans       &trans       &trans     &trans
-&trans     &kp SEMI   &kp N4     &kp N5      &kp N6    &kp EQUAL   &kp C_NEXT    &trans         &trans       &trans       &trans     &trans
+&trans     &kp SEMI   &kp N4     &kp N5      &kp N6    &kp EQUAL   &kp C_NEXT    &trans         &trans       &trans       &trans     &kp LALT
 &trans     &kp GRAVE  &kp N7     &kp N8      &kp N9    &kp BSLH    &trans        &trans         &trans       &trans       &trans     &trans
 #ifdef TBLE_DUAL_2U
                      &trans     &kp N0              &kp MINUS                 &trans            &trans         &trans
