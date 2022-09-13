@@ -74,8 +74,8 @@
             label = "Nav";
             bindings = <
 &bt BT_CLR &trans     &trans     &trans      &trans          &trans       &trans     &kp LPAR       &kp RPAR    &kp MINUS  &kp EQUAL  &key_repeat
-&kp LALT   &trans     &trans     &trans      &trans          &kp PG_UP    &kp HOME   &kp UARW       &kp END     &kp LBKT   &kp RBKT   &kp CAPS
-&trans     &trans     &trans     &trans      &trans          &kp PG_DN    &kp LARW   &kp DARW       &kp RARW    &kp ESC    &kp BSLH   &kp RET
+&kp LALT   &trans     &trans     &trans      &trans          &trans       &trans     &kp UARW       &trans      &kp LBKT   &kp RBKT   &kp CAPS
+&trans     &trans     &trans     &trans      &trans          &trans       &kp LARW   &kp DARW       &kp RARW    &kp ESC    &kp BSLH   &kp RET
 #ifdef TBLE_DUAL_2U
                       &trans     &trans              &trans                    &trans       &trans         &trans
 #elif defined(TBLE_MIT)
@@ -105,9 +105,9 @@
         sym_layer {
             label = "Sym";
             bindings = <
-&trans     &kp LBRC   &kp LS(N1) &kp LS(N2)  &kp LS(N3)   &kp RBRC     &trans     &trans     &kp F1      &kp F2       &kp F3     &kp RCTRL
-&trans     &kp RBRC   &kp LS(N4) &kp LS(N5)  &kp LS(N6)   &kp PLUS     &trans     &trans     &kp F4      &kp F5       &kp F6     &kp RALT
-&trans     &kp PIPE   &kp LS(N7) &kp LS(N8)  &kp LS(N9)   &kp LS(BSLH) &trans     &trans     &kp F7      &kp F8       &kp F9     &kp RCMD
+&trans     &kp LS(N1) &kp LS(N2) &kp LS(N3)  &kp LS(N4)   &kp LS(N5)   &kp LS(N6) &kp LS(N7) &kp LS(N8)  &kp LS(N9)   &kp LS(N0) &kp RCTRL
+&trans     &kp F1     &kp F2     &kp F3      &kp F4       &kp F5       &kp F6     &trans     &kp PG_UP   &trans       &trans     &kp RALT
+&trans     &kp F7     &kp F8     &kp F9      &kp F10      &kp F11      &kp F12    &kp HOME   &kp PG_DN   &kp END      &kp PIPE   &kp RCMD
 #ifdef TBLE_DUAL_2U
                       &trans     &kp LS(N0)              &trans                    &trans       &trans         &trans
 #elif defined(TBLE_MIT)
