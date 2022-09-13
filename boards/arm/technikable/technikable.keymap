@@ -73,9 +73,9 @@
         nav_layer {
             label = "Nav";
             bindings = <
-&bt BT_CLR &trans     &trans     &trans      &trans          &trans       &trans     &kp HOME       &kp UARW    &kp END    &kp PG_UP  &key_repeat
-&kp LALT   &trans     &trans     &trans      &trans          &trans       &trans     &kp LARW       &kp DARW    &kp RARW   &kp PG_DN  &kp CAPS
-&trans     &trans     &trans     &trans      &trans          &trans       &trans     &trans         &trans      &kp ESC    &kp END    &kp RET
+&bt BT_CLR &trans     &trans     &trans      &trans          &trans       &trans     &kp LPAR       &kp RPAR    &kp MINUS  &kp EQUAL  &key_repeat
+&kp LALT   &trans     &trans     &trans      &trans          &kp PG_UP    &kp HOME   &kp UARW       &kp END     &kp LBKT   &kp RBKT   &kp CAPS
+&trans     &trans     &trans     &trans      &trans          &kp PG_DN    &kp LARW   &kp DARW       &kp RARW    &kp ESC    &kp BSLH   &kp RET
 #ifdef TBLE_DUAL_2U
                       &trans     &trans              &trans                    &trans       &trans         &trans
 #elif defined(TBLE_MIT)
@@ -91,7 +91,7 @@
             bindings = <
 &kp ESC    &kp LBKT   &kp N1     &kp N2      &kp N3    &kp RBKT    &kp C_PREV    &kp LPAR       &kp RPAR     &kp MINUS    &kp EQUAL  &trans
 &trans     &kp RBKT   &kp N4     &kp N5      &kp N6    &kp EQUAL   &kp C_NEXT    &trans         &trans       &kp LBKT     &kp RBKT   &kp LALT
-&trans     &kp BSLH   &kp N7     &kp N8      &kp N9    &kp BSLH    &trans        &trans         &trans       &trans       &trans     &trans
+&trans     &kp BSLH   &kp N7     &kp N8      &kp N9    &kp BSLH    &trans        &trans         &trans       &trans       &kp BSLH   &trans
 #ifdef TBLE_DUAL_2U
                      &trans     &kp N0              &kp MINUS                 &trans            &trans         &trans
 #elif defined(TBLE_MIT)
