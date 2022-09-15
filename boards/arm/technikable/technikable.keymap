@@ -110,7 +110,7 @@
         num_layer {
             label = "Num";
             bindings = <
-&kp ESC    &kp EXCL   &shat      &shhash     &shdllr   &kp PRCNT   &kp LPAR      &kp RPAR       &kp UNDER    &kp PLUS     &kp TILDE  &trans
+&trans     &kp EXCL   &shat      &shhash     &shdllr   &kp PRCNT   &kp LPAR      &kp RPAR       &kp UNDER    &kp PLUS     &kp ESC    &trans
 &trans     &trans     &kp N4     &kp N5      &kp N6    &kp C_PREV  &kp C_NEXT    &trans         &kp LBRC     &kp RBRC     &trans     &kp LALT
 &trans     &trans     &kp N7     &kp N8      &kp N9    &trans      &trans        &trans         &kp LT       &kp GT       &kp BSLH   &trans
 #ifdef TBLE_DUAL_2U
@@ -118,7 +118,7 @@
 #elif defined(TBLE_MIT)
                      &trans     &kp N0      &kp MINUS           &none            &kp ESC        &kp DEL      &trans
 #else
-                     &trans     &kp N0      &kp LCMD     &trans        &kp DEL   &trans         &kp ESC      &trans
+                     &trans     &kp N0      &kp trans    &trans        &kp DEL   &trans         &kp ESC      &trans
 #endif
             >;
         };
