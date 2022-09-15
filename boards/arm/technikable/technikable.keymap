@@ -118,7 +118,7 @@
 #elif defined(TBLE_MIT)
                      &trans     &kp N0      &kp MINUS           &none            &kp ESC        &kp DEL      &trans
 #else
-                     &trans     &kp N0      &kp trans    &trans        &kp DEL   &trans         &kp ESC      &trans
+                     &trans     &kp N0      &trans       &trans        &kp DEL   &trans         &kp ESC      &trans
 #endif
             >;
         };
