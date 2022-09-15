@@ -9,6 +9,8 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
+#define QWERTY_BASE 1
+
 #define TBLE_ORTHO   true
 // #define TBLE_MIT     true
 // #define TBLE_DUAL_2U true
@@ -42,10 +44,10 @@
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
-    tri_layer {
-        if-layers = <NAV_L NUM_L>;
-        then-layer = <SYM_L>;
-    };
+	tri_layer {
+	    if-layers = <NAV_L NUM_L>;
+	    then-layer = <SYM_L>;
+	};
     };
     
     behaviors {
@@ -78,9 +80,15 @@
         base_layer {
             label = "Base";
             bindings = <
+#ifdef QWERTY_BASE
  &kp GRAVE  &kp Q      &kp W      &kp E       &kp R          &kp T          &kp Y            &kp U          &kp I       &kp O      &kp P         &kp RCMD
  &kp TAB    &kp A      &kp S      &kp D       &kp F          &kp G          &kp H            &kp J          &kp K       &kp L      &kp QUOT      &kp RALT
  &caps_word &kp Z      &kp X      &kp C       &kp V          &kp B          &kp N            &kp M          &kp COMMA   &kp DOT    &kp FSLH      &kp RSHFT
+ #else
+ &kp ESC    &kp Q      &kp W      &kp F       &kp P          &kp B          &kp J            &kp L          &kp U       &kp Y      &kp QUOT     &kp BKSP
+ &kp TAB    &kp A      &kp R      &kp S       &kp T          &kp G          &kp M            &kp N          &kp E       &kp I      &kp O        &kp QUOT
+ &kp LSHFT  &kp Z      &kp X      &kp C       &kp D          &kp V          &kp K            &kp H          &kp COMMA   &kp DOT    &kp FSLH     &kp RSHFT
+#endif
 #ifdef TBLE_DUAL_2U
                        &kp LCTRL  &kp LALT      &lt NAV_L SPACE                &lt NUM_L SPACE              &kp RALT    &kp RCTRL
 #elif defined(TBLE_MIT)
