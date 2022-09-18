@@ -74,7 +74,7 @@
         };
     };
     
-/ {
+    
     combos {
         compatible = "zmk,combos";
         combo_functionlayer {
@@ -90,7 +90,6 @@
             bindings = <&sl 5>;
         };
     };
-};
     
 
 
