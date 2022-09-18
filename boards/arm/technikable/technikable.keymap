@@ -89,6 +89,18 @@
              layers = <1 2>;
              bindings = <&sl 4>;
          };
+	combo_prevtab {
+             timeout-ms = <50>;
+             key-positions = <19 20>;
+             layers = <0>;
+             bindings = <&kp LC(LS(TAB))>;
+         };
+	combo_nexttab {
+             timeout-ms = <50>;
+             key-positions = <20 21>;
+             layers = <0>;
+             bindings = < &kp LC(TAB)>;
+         };
 	combo_pageup {
              timeout-ms = <50>;
              key-positions = <19 20>;
@@ -101,9 +113,20 @@
              layers = <1 2>;
              bindings = <&kp PG_DN>;
          };
+	combo_home {
+             timeout-ms = <50>;
+             key-positions = <8 19>;
+             layers = <1 2>;
+             bindings = <&kp HOME>;
+         };
+	combo_end {
+             timeout-ms = <50>;
+             key-positions = <20 31>;
+             layers = <1 2>;
+             bindings = <&kp END>;
+         };
     };
     
-
 
     keymap {
         compatible = "zmk,keymap";
