@@ -77,11 +77,18 @@
     
     combos {
         compatible = "zmk,combos";
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&kp ESC>;
-        };
+	combo_settingslayer {
+             timeout-ms = <50>;
+             key-positions = <0 11>;
+             layers = <1 2>;
+             bindings = <&sl 5>;
+         };
+ //	combo_settingslayer {
+ //         timeout-ms = <50>;
+ //         key-positions = <0 11>;
+ //         layers = <1 2>
+ //         bindings = <&sl 5>;
+ //	};
     };
     
 
