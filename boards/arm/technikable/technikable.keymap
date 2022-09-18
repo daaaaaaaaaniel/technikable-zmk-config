@@ -161,37 +161,37 @@
             >;
         };
 	
-        fun_layer {
-            label = "function";
-            bindings = <
-&bt BT_CLR &bt BT(0)  &bt BT(1)  &bt BT(2)   &bt BT(3)    &bt BT(4)    &trans     &trans     &trans      &trans       &trans     &trans
-&trans     &kp F1     &kp F2     &kp F3      &kp F4       &kp F5       &kp F6     &trans     &trans      &bt BT_PRV   &bt BT_NXT &trans
-&trans     &kp F7     &kp F8     &kp F9      &kp F10      &kp F11      &kp F12    &trans     &trans      &trans       &trans     &trans
-#ifdef TBLE_DUAL_2U
-                      &trans     &trans                  &trans                    &trans       &trans         &trans
-#elif defined(TBLE_MIT)
-                      &trans     &trans          &trans                &trans             &trans      &trans   &trans
-#else
-                      &trans     &trans          &trans          &trans       &trans    &trans  &trans         &trans
-#endif
-            >;
-        };
-	
-        set_layer {
-            label = "settings";
-            bindings = <
-&bt BT_CLR &bt BT(0)  &bt BT(1)  &bt BT(2)   &bt BT(3)    &bt BT(4)    &trans     &trans     &trans      &trans       &trans     &trans
-&trans     &kp F1     &kp F2     &kp F3      &kp F4       &kp F5       &kp F6     &trans     &trans      &bt BT_PRV   &bt BT_NXT &trans
-&trans     &kp F7     &kp F8     &kp F9      &kp F10      &kp F11      &kp F12    &trans     &trans      &trans       &trans     &trans
-#ifdef TBLE_DUAL_2U
-                      &trans     &trans                  &trans                    &trans       &trans         &trans
-#elif defined(TBLE_MIT)
-                      &trans     &trans          &trans                &trans             &trans      &trans   &trans
-#else
-                      &trans     &trans          &trans          &trans       &trans    &trans  &trans         &trans
-#endif
-            >;
-        };
+//         fun_layer {
+//             label = "function";
+//             bindings = <
+// &bt BT_CLR &bt BT(0)  &bt BT(1)  &bt BT(2)   &bt BT(3)    &bt BT(4)    &trans     &trans     &trans      &trans       &trans     &trans
+// &trans     &kp F1     &kp F2     &kp F3      &kp F4       &kp F5       &kp F6     &trans     &trans      &bt BT_PRV   &bt BT_NXT &trans
+// &trans     &kp F7     &kp F8     &kp F9      &kp F10      &kp F11      &kp F12    &trans     &trans      &trans       &trans     &trans
+// #ifdef TBLE_DUAL_2U
+//                       &trans     &trans                  &trans                    &trans       &trans         &trans
+// #elif defined(TBLE_MIT)
+//                       &trans     &trans          &trans                &trans             &trans      &trans   &trans
+// #else
+//                       &trans     &trans          &trans          &trans       &trans    &trans  &trans         &trans
+// #endif
+//             >;
+//         };
+// 	
+//         set_layer {
+//             label = "settings";
+//             bindings = <
+// &bt BT_CLR &bt BT(0)  &bt BT(1)  &bt BT(2)   &bt BT(3)    &bt BT(4)    &trans     &trans     &trans      &trans       &trans     &trans
+// &trans     &kp F1     &kp F2     &kp F3      &kp F4       &kp F5       &kp F6     &trans     &trans      &bt BT_PRV   &bt BT_NXT &trans
+// &trans     &kp F7     &kp F8     &kp F9      &kp F10      &kp F11      &kp F12    &trans     &trans      &trans       &trans     &trans
+// #ifdef TBLE_DUAL_2U
+//                       &trans     &trans                  &trans                    &trans       &trans         &trans
+// #elif defined(TBLE_MIT)
+//                       &trans     &trans          &trans                &trans             &trans      &trans   &trans
+// #else
+//                       &trans     &trans          &trans          &trans       &trans    &trans  &trans         &trans
+// #endif
+//             >;
+//        };
 
     };
 };
