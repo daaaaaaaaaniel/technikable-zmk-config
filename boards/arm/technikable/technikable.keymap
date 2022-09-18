@@ -80,14 +80,14 @@
 	combo_settingslayer {
              timeout-ms = <50>;
              key-positions = <0 11>;
-             layers = <1 2>;
+             layers = <0>;
              bindings = <&sl 5>;
          };
  //	combo_settingslayer {
  //         timeout-ms = <50>;
  //         key-positions = <0 11>;
  //         layers = <1 2>
- //         bindings = <&sl 5>;
+ //         bindings = <&sl 4>;
  //	};
     };
     
@@ -102,29 +102,17 @@
  &sk LCMD   &kp Q      &kp W      &kp E       &kp R          &kp T          &kp Y            &kp U          &kp I       &kp O      &kp P         &kp RCMD
  &kp LALT   &kp A      &kp S      &kp D       &kp F          &kp G          &kp H            &kp J          &kp K       &kp L      &kp QUOT      &kp RALT
  &sk LSHFT  &kp Z      &kp X      &kp C       &kp V          &kp B          &kp N            &kp M          &kp COMMA   &kp DOT    &kp FSLH      &kp RSHFT
-#ifdef TBLE_DUAL_2U
-                       &kp LCTRL  &kp LALT      &lt NAV_L SPACE                &lt NUM_L SPACE              &kp RALT    &kp RCTRL
-#elif defined(TBLE_MIT)
-                       &kp LCTRL  &kp LALT    &mo NAV_L          &kp SPACE                   &mo NUM_L      &kp RALT    &kp RCTRL
-#else
-                       &kp LG(LCTRL) &kp LG(LALT)  &sk LSHFT      &mo NAV_L      &kp SPACE        &mo NUM_L      &kp RG(RALT)    &kp RG(RCTRL)
-#endif
+                       &kp LG(LCTRL) &kp LG(LALT)  &sk LSHFT      &mo NAV_L      &kp SPACE        &mo NUM_L      &kp RG(RALT)    &kp CAPS
             >;
         };
 
         nav_layer {
             label = "Nav";
             bindings = <
-&kp LCMD   &kp EXCL   &kp AT     &kp HASH    &kp DLLR        &kp PRCNT    &kp LPAR   &kp RPAR       &kp EQUAL   &kp MINUS  &kp TAB    &trans
-&kp LALT   &kp CARET  &kp AMPS   &kp ASTRK   &kp LPAR        &kp RPAR     &trans     &trans         &kp UARW    &kp TAB    &kp COLON  &kp CAPS
+&kp LCMD   &kp EXCL   &kp AT     &kp HASH    &kp DLLR        &kp PRCNT    &kp LPAR   &kp RPAR       &kp MINUS   &kp EQUAL  &kp TAB    &trans
+&kp LALT   &kp CARET  &kp AMPS   &kp ASTRK   &kp LC(LS(TAB)) &kp LC(TAB)  &trans     &kp TAB        &kp UARW    &kp GRAVE  &kp COLON  &kp CAPS
 &kp LCTRL  &trans     &trans     &trans      &trans          &trans       &trans     &kp LARW       &kp DARW    &kp RARW   &kp BSLH   &kp RET
-#ifdef TBLE_DUAL_2U
-                      &trans     &trans              &trans                    &trans       &trans         &trans
-#elif defined(TBLE_MIT)
-                      &trans     &trans      &trans                &trans             &trans      &trans   &trans
-#else
                       &trans     &trans      &trans          &trans       &kp BKSP  &trans  &trans         &trans
-#endif
             >;
         };
 
@@ -132,15 +120,9 @@
             label = "Num";
             bindings = <
 &trans     &kp EXCL   &shat      &shhash     &shdllr   &kp PRCNT   &kp LPAR      &kp RPAR       &kp UNDER    &kp PLUS     &kp ESC    &trans
-&trans     &trans     &kp N4     &kp N5      &kp N6    &kp GRAVE   &kp C_NEXT    &trans         &kp LBRC     &kp RBRC     &kp SEMI   &kp LALT
+&trans     &kp TAB    &kp N4     &kp N5      &kp N6    &kp GRAVE   &kp C_NEXT    &trans         &kp LBRC     &kp RBRC     &kp DQT    &kp LALT
 &trans     &trans     &kp N7     &kp N8      &kp N9    &kp TAB     &trans        &trans         &kp LT       &kp GT       &kp BSLH   &trans
-#ifdef TBLE_DUAL_2U
-                     &trans     &kp N0              &kp MINUS                 &trans            &trans         &trans
-#elif defined(TBLE_MIT)
-                     &trans     &kp N0      &kp MINUS           &none            &kp ESC        &kp DEL      &trans
-#else
                      &trans     &kp N0      &trans       &trans        &kp DEL   &trans         &kp ESC      &trans
-#endif
             >;
         };
 
@@ -148,15 +130,9 @@
             label = "Sym";
             bindings = <
 &bt BT_CLR &kp LS(N1) &kp LS(N2) &kp LS(N3)  &kp LS(N4)   &kp LS(N5)   &kp LS(N6) &kp LS(N7) &kp LS(N8)  &kp LS(N9)   &kp LS(N0) &kp RCTRL
-&trans     &kp F1     &kp F2     &kp F3      &kp F4       &kp TILDE    &kp F6     &kp PG_UP  &kp HOME    &bt BT_PRV   &bt BT_NXT &kp RALT
+&trans     &kp F1     &kp F2     &kp F3      &kp F4       &kp F5       &kp F6     &kp PG_UP  &kp HOME    &kp TILDE    &kp SEMI   &kp RALT
 &trans     &kp F7     &kp F8     &kp F9      &kp F10      &kp F11      &kp F12    &kp PG_DN  &kp END     &trans       &kp PIPE   &kp RCMD
-#ifdef TBLE_DUAL_2U
-                      &trans     &kp LS(N0)              &trans                    &trans       &trans         &trans
-#elif defined(TBLE_MIT)
-                      &trans     &kp LS(N0)      &trans                &trans             &trans      &trans   &trans
-#else
                       &trans     &kp LS(N0)      &trans          &trans       &trans    &trans  &bt BT(0)      &bt BT(1)
-#endif
             >;
         };
 	
