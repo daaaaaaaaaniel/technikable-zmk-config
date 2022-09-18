@@ -17,8 +17,8 @@
 #define NAV_L 1
 #define NUM_L 2
 #define SYM_L 3
-#define FUN_L 4
-#define SET_L 5
+// #define FUN_L 4
+// #define SET_L 5
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
@@ -87,7 +87,7 @@
             timeout-ms = <50>;
             key-positions = <0 11>;
 	    layers = <1 2>
-            bindings = <&sl SET_L>;
+            bindings = <&sl SYM_L>;
         };
     };
 };
