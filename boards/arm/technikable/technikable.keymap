@@ -190,8 +190,8 @@
         sym2_layer {
             label = "Sym2";
             bindings = <
-&trans     &kp LS(N1) &kp LS(N2) &kp LS(N3)  &kp LS(N4)   &kp LS(N5)   &kp LBRC   &kp TILDE    &kp UNDER    &kp PLUS      &kp LS(TAB) &trans
-&trans     &kp LS(N6) &kp LS(N7) &kp LS(N8)  &kp LS(N9)   &kp LS(N0)   &kp LBKT   &kp LPAR     &kp LS(UARW) &kp LG(LC(D)) &kp COLON   &trans
+&trans     &kp LS(N1) &kp LS(N2) &kp LS(N3)  &kp LS(N4)   &kp LS(N5)   &kp GT     &kp TILDE    &kp UNDER    &kp PLUS      &kp LS(TAB) &trans
+&trans     &kp LS(N6) &kp LS(N7) &kp LS(N8)  &kp LS(N9)   &kp LS(N0)   &kp LBRC   &kp RBRC     &kp LS(UARW) &kp LG(LC(D)) &kp COLON   &trans
 &trans     &kp LG(Z)  &kp LG(X)  &kp LG(C)   &kp LG(V)    &kp LG(B)    &kp F12    &kp LS(LARW) &kp LS(DARW) &kp LS(RARW)  &kp BSLH    &trans
                       &trans     &bt BT_CLR  &trans       &trans       &kp DEL    &trans       &bt BT(0)    &bt BT_NXT
             >;
@@ -200,10 +200,10 @@
         nav_layer {
             label = "Nav";
             bindings = <
-&kp LCMD   &kp EXCL   &kp AT     &kp HASH    &kp DLLR        &kp PRCNT    &kp RBRC   &kp GRAVE      &kp MINUS   &kp EQUAL  &kp TAB    &trans
-&kp LALT   &kp CARET  &kp AMPS   &kp ASTRK   &kp LC(LS(TAB)) &kp LC(TAB)  &kp RBKT   &kp RPAR       &kp UARW    &kp TAB    &kp DQT  &trans
-&kp LCTRL  &trans     &trans     &trans      &trans          &trans       &trans     &kp LARW       &kp DARW    &kp RARW   &kp RET    &kp RET
-                      &trans     &trans      &trans          &trans       &kp BKSP   &trans         &trans      &trans
+&kp LCMD   &kp EXCL   &kp AT     &kp HASH    &kp DLLR        &kp PRCNT    &kp KP_ASTERISK &kp GRAVE      &kp MINUS   &kp EQUAL  &kp TAB    &trans
+&kp LALT   &kp CARET  &kp AMPS   &kp ASTRK   &kp LC(LS(TAB)) &kp LC(TAB)  &kp LPAR        &kp RPAR       &kp UARW    &kp TAB    &kp DQT    &trans
+&kp LCTRL  &trans     &trans     &trans      &trans          &trans       &trans          &kp LARW       &kp DARW    &kp RARW   &kp RET    &kp RET
+                      &trans     &trans      &trans          &trans       &kp BKSP        &trans         &trans      &trans
             >;
         };
 
@@ -211,8 +211,8 @@
             label = "Num";
             bindings = <
 &trans     &kp EXCL   &shat      &shhash     &shdllr   &kp PRCNT   &kp LPAR      &kp RPAR       &kp UNDER    &kp PLUS     &kp ESC    &trans
-&trans     &kp TAB    &kp N4     &kp N5      &kp N6    &kp GRAVE   &kp C_NEXT    &trans         &kp LBRC     &kp RBRC     &kp SEMI    &trans
-&trans     &trans     &kp N7     &kp N8      &kp N9    &kp TAB     &trans        &trans         &kp LT       &kp GT       &kp PIPE   &trans
+&trans     &kp AT     &kp N4     &kp N5      &kp N6    &kp GRAVE   &kp LBRC      &kp RBRC       &kp LBRC     &kp RBRC     &kp SEMI   &trans
+&trans     &kp TAB    &kp N7     &kp N8      &kp N9    &kp TAB     &trans        &trans         &kp LT       &kp GT       &kp PIPE   &trans
                       &trans     &kp N0      &trans    &trans      &kp DEL       &trans         &kp ESC      &trans
             >;
         };
@@ -220,10 +220,10 @@
         sym_layer {
             label = "Sym";
             bindings = <
-&bt BT_CLR &kp LS(N1) &kp LS(N2) &kp LS(N3)  &kp LS(N4)   &kp LS(N5)   &kp LS(N6) &kp LS(N7)   &kp LS(N8)   &kp LS(N9)   &kp LS(N0)  &trans
-&trans     &kp LG(A)  &kp LG(S)  &kp LG(D)   &kp LG(F)    &kp LG(H)    &kp F6     &kp LS(TAB)  &kp PG_UP    &kp TILDE    &kp SEMI    &trans
-&trans     &kp LG(Z)  &kp LG(X)  &kp LG(C)   &kp LG(V)    &kp LG(B)    &kp F12    &kp HOME     &kp PG_DN    &kp END      &kp LS(RET) &kp RCTRL
-                      &trans     &kp LS(N0)  &trans       &trans       &trans     &trans       &bt BT(0)    &bt BT(1)
+&bt BT_CLR &kp LS(N1) &kp LS(N2) &kp LS(N3)  &kp LS(N4)   &kp LS(N5)   &kp LS(N6) &kp NON_US_HASH  &kp ASTRK    &kp GT       &kp LS(N0)  &trans
+&trans     &kp LG(A)  &kp LG(S)  &kp LG(D)   &kp LG(F)    &kp LG(H)    &kp F6     &kp LS(TAB)      &kp PG_UP    &kp TILDE    &kp SEMI    &trans
+&trans     &kp LG(Z)  &kp LG(X)  &kp LG(C)   &kp LG(V)    &kp LG(B)    &kp F12    &kp HOME         &kp PG_DN    &kp END      &kp LS(RET) &kp RCTRL
+                      &trans     &kp LS(N0)  &trans       &trans       &trans     &trans           &bt BT(0)    &bt BT(1)
             >;
         };
 	
