@@ -83,10 +83,10 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &mo 1 &kp LSHFT>
+                = <&macro_press &sl 1 &kp LSHFT>
 		, <&macro_tap &sk LSHFT>
                 , <&macro_pause_for_release>
-                , <&macro_release &mo 1 &kp LSHFT>
+                , <&macro_release &sl 1 &kp LSHFT>
                 ;
         };
 	unshift_tab: unshift_tab {
