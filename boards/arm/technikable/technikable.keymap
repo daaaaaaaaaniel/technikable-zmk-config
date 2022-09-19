@@ -14,11 +14,12 @@
 // #define TBLE_DUAL_2U true
 
 #define BAS_L 0
-#define NAV_L 1
-#define NUM_L 2
-#define SYM_L 3
-#define FUN_L 4
-#define SET_L 5
+#define SFT_L 1
+#define NAV_L 2
+#define NUM_L 3
+#define SYM_L 4
+#define FUN_L 5
+#define SET_L 6
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
@@ -77,7 +78,7 @@
     
     combos {
         compatible = "zmk,combos";
-	combo_settingslayer {
+	combo_funlayer {
              timeout-ms = <50>;
              key-positions = <0 11>;
              layers = <0>;
@@ -86,8 +87,8 @@
 	combo_settingslayer {
              timeout-ms = <50>;
              key-positions = <0 11>;
-             layers = <1 2>;
-             bindings = <&sl 4>;
+             layers = <NAV_L NUM_L>;
+             bindings = <&sl 6>;
          };
 	combo_prevtab {
              timeout-ms = <50>;
@@ -104,25 +105,25 @@
 	combo_pageup {
              timeout-ms = <50>;
              key-positions = <19 20>;
-             layers = <1 2>;
+             layers = <NAV_L NUM_L>;
              bindings = <&kp PG_UP>;
          };
 	combo_pagedown {
              timeout-ms = <50>;
              key-positions = <31 32>;
-             layers = <1 2>;
+             layers = <NAV_L NUM_L>;
              bindings = <&kp PG_DN>;
          };
 	combo_home {
              timeout-ms = <50>;
              key-positions = <8 19>;
-             layers = <1 2>;
+             layers = <NAV_L NUM_L>;
              bindings = <&kp HOME>;
          };
 	combo_end {
              timeout-ms = <50>;
              key-positions = <20 31>;
-             layers = <1 2>;
+             layers = <NAV_L NUM_L>;
              bindings = <&kp END>;
          };
     };
@@ -137,7 +138,17 @@
  &sk LCMD   &kp Q      &kp W      &kp E       &kp R          &kp T          &kp Y            &kp U          &kp I       &kp O      &kp P         &kp RCMD
  &kp LALT   &kp A      &kp S      &kp D       &kp F          &kp G          &kp H            &kp J          &kp K       &kp L      &kp QUOT      &kp RALT
  &sk LSHFT  &kp Z      &kp X      &kp C       &kp V          &kp B          &kp N            &kp M          &kp COMMA   &kp DOT    &kp FSLH      &kp RSHFT
-                       &kp LG(LCTRL) &kp LG(LALT)  &sk LSHFT      &mo NAV_L      &kp SPACE        &mo NUM_L      &kp RG(RALT)    &kp CAPS
+                       &kp LG(LCTRL) &kp LG(LALT) &sl SFT_L  &mo NAV_L      &kp SPACE        &mo NUM_L      &sk RSHFT   &kp CAPS
+            >;
+        };
+	
+        shift_layer {
+            label = "Shift";
+            bindings = <
+ &trans   &kp LS(Q)    &kp LS(W)   &kp LS(E)   &kp LS(R)   &kp LS(T)    &kp LS(Y)   &kp LS(U)    &kp LS(I)    &kp LS(O)    &kp LS(P)   &trans
+ &trans   &kp LS(A)    &kp LS(S)   &kp LS(D)   &kp LS(F)   &kp LS(G)    &kp LS(H)   &kp LS(J)    &kp LS(K)    &kp LS(L)    &kp DQT     &trans
+ &trans   &kp LS(Z)    &kp LS(X)   &kp LS(C)   &kp LS(V)   &kp LS(B)    &kp LS(N)   &kp LS(M)    &kp LBKT     &kp RBKT     &kp BSLH    &trans
+                       &trans      &trans      &sl SFT_L   &kp LS(TAB)  &kp TAB     &mo NUM_L    &trans       &trans
             >;
         };
 
@@ -157,7 +168,7 @@
 &trans     &kp EXCL   &shat      &shhash     &shdllr   &kp PRCNT   &kp LPAR      &kp RPAR       &kp UNDER    &kp PLUS     &kp ESC    &trans
 &trans     &kp TAB    &kp N4     &kp N5      &kp N6    &kp GRAVE   &kp C_NEXT    &trans         &kp LBRC     &kp RBRC     &kp DQT    &kp LALT
 &trans     &trans     &kp N7     &kp N8      &kp N9    &kp TAB     &trans        &trans         &kp LT       &kp GT       &kp BSLH   &trans
-                     &trans     &kp N0      &trans       &trans        &kp DEL   &trans         &kp ESC      &trans
+                      &trans     &kp N0      &trans    &trans      &kp DEL       &trans         &kp ESC      &trans
             >;
         };
 
@@ -165,9 +176,9 @@
             label = "Sym";
             bindings = <
 &bt BT_CLR &kp LS(N1) &kp LS(N2) &kp LS(N3)  &kp LS(N4)   &kp LS(N5)   &kp LS(N6) &kp LS(N7)   &kp LS(N8)   &kp LS(N9)   &kp LS(N0) &kp RCTRL
-&trans     &kp F1     &kp F2     &kp F3      &kp F4       &kp F5       &kp F6     &kp LS(TAB)  &kp LS(UARW) &kp TILDE    &kp SEMI   &kp RALT
-&trans     &kp F7     &kp F8     &kp F9      &kp F10      &kp F11      &kp F12    &kp LS(LARW) &kp LS(DARW) &kp LS(RARW) &kp PIPE   &kp RCMD
-                      &trans     &kp LS(N0)      &trans          &trans       &trans    &trans  &bt BT(0)      &bt BT(1)
+&trans     &kp LG(A)  &kp LG(S)  &kp LG(D)   &kp LG(F)    &kp LG(H)    &kp F6     &kp LS(TAB)  &kp LS(UARW) &kp TILDE    &kp SEMI   &kp RALT
+&trans     &kp LG(Z)  &kp LG(X)  &kp LG(C)   &kp LG(V)    &kp LG(B)    &kp F12    &kp LS(LARW) &kp LS(DARW) &kp LS(RARW) &kp PIPE   &kp RCMD
+                      &trans     &kp LS(N0)  &trans       &trans       &trans     &trans       &bt BT(0)    &bt BT(1)
             >;
         };
 	
