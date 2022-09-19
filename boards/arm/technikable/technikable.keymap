@@ -14,7 +14,7 @@
 // #define TBLE_DUAL_2U true
 
 #define BAS_L 0
-#define SY2_L 1
+#define ALT_L 1
 #define NAV_L 2
 #define NUM_L 3
 #define SYM_L 4
@@ -187,8 +187,8 @@
             >;
         };
 	
-        sym2_layer {
-            label = "Sym2";
+        alt_layer {
+            label = "alter";
             bindings = <
 &trans     &kp LS(N1) &kp LS(N2) &kp LS(N3)  &kp LS(N4)   &kp LS(N5)   &kp GT     &kp TILDE    &kp UNDER    &kp PLUS      &kp LS(TAB) &trans
 &trans     &kp LS(N6) &kp LS(N7) &kp LS(N8)  &kp LS(N9)   &kp LS(N0)   &kp RBKT   &kp LBKT     &kp LS(UARW) &kp LG(LC(D)) &kp COLON   &trans
