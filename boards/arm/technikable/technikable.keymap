@@ -83,7 +83,8 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &mo 1 &sk LSHFT>
+                = <&macro_press &mo 1 &kp LSHFT>
+		, <&macro_tap &sk LSHFT>
                 , <&macro_pause_for_release>
                 , <&macro_release &mo 1 &sk LSHFT>
                 ;
@@ -227,8 +228,8 @@
             bindings = <
  &trans   &trans   &trans   &trans   &trans        &trans      &trans        &trans     &trans         &trans         &trans         &trans
  &trans   &trans   &trans   &trans   &trans        &trans      &trans        &trans     &trans         &trans         &kp DQT        &trans
- &kp CAPS &trans   &trans   &trans   &trans        &trans      &trans        &trans     &unshift_lbkt  &unshift_rbkt  &unshift_bslh  &kp LS(RET)
-                   &trans   &trans   &psuedo_shift &kp LS(TAB) &unshift_tab  &mo NUM_L  &trans    &trans
+ &kp CAPS &trans   &trans   &trans   &trans        &trans      &trans        &trans     &LBKT     &kp RBKT     &kp BSLH  &kp LS(RET)
+                   &trans   &trans   &psuedo_shift &kp LS(TAB) &kp DEL       &mo NUM_L  &trans    &trans
             >;
         };
 
