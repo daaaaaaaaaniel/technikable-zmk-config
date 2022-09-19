@@ -74,6 +74,27 @@
             bindings = <&kp N3>, <&kp DOLLAR>;
             mods = <MOD_RSFT>;
         };
+        unlbkt: unshift_leftbracket {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LEFT_BRACKET_UNSHIFTED";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT>, <&kp LBKT>;
+            mods = <MOD_LSFT>;
+        };
+        unrbkt: unshift_rightbracket {
+            compatible = "zmk,behavior-mod-morph";
+            label = "RIGHT_BRACKET_UNSHIFTED";
+            #binding-cells = <0>;
+            bindings = <&kp RBKT>, <&kp RBKT>;
+            mods = <MOD_LSFT>;
+        };
+        unbslh: unshift_backslash{
+            compatible = "zmk,behavior-mod-morph";
+            label = "BACKSLASH_UNSHIFTED";
+            #binding-cells = <0>;
+            bindings = <&kp BSLH>, <&kp BSLH>;
+            mods = <MOD_LSFT>;
+        };
     };
     
     
@@ -83,50 +104,9 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &sl 1 &kp LSHFT>
-		, <&macro_tap &sk LSHFT>
+                = <&macro_press &mo 1 &sk LSHFT>
                 , <&macro_pause_for_release>
-                , <&macro_release &sl 1 &kp LSHFT>
-                ;
-        };
-	unshift_tab: unshift_tab {
-            label = "unshift_tab";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_release &kp LSHFT>
-                , <&macro_tap &kp TAB>
-                , <&macro_press &kp LSHFT>
-                ;
-        };
-	unshift_lbkt: unshift_lbkt {
-            label = "unshift_lbkt";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_release &kp LSHFT>
-                , <&macro_tap &kp LBKT>
-                , <&macro_press &kp LSHFT>
-                ;
-        };
-	unshift_rbkt: unshift_rbkt {
-            label = "unshift_rbkt";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_release &kp LSHFT>
-                , <&macro_tap &kp RBKT>
-                , <&macro_press &kp LSHFT>
-                ;
-        };
-	unshift_bslh: unshift_bslh {
-            label = "unshift_bslh";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_release &kp LSHFT>
-                , <&macro_tap &kp BSLH>
-                , <&macro_press &kp LSHFT>
+                , <&macro_release &mo 1 &sk LSHFT>
                 ;
         };
     };
@@ -226,10 +206,10 @@
         shift_layer {
             label = "Shift";
             bindings = <
- &trans   &trans   &trans   &trans   &trans        &trans      &trans        &trans     &trans         &trans         &trans         &trans
- &trans   &trans   &trans   &trans   &trans        &trans      &trans        &trans     &trans         &trans         &kp DQT        &trans
- &kp CAPS &trans   &trans   &trans   &trans        &trans      &trans        &trans     &unshift_lbkt  &unshift_rbkt  &unshift_bslh  &kp LS(RET)
-                   &trans   &trans   &psuedo_shift &kp LS(TAB) &kp DEL       &mo NUM_L  &trans    &trans
+ &trans   &trans   &trans   &trans   &trans        &trans      &trans      &trans     &trans     &trans      &trans     &trans
+ &trans   &trans   &trans   &trans   &trans        &trans      &trans      &trans     &trans     &trans      &kp DQT    &trans
+ &kp CAPS &trans   &trans   &trans   &trans        &trans      &trans      &trans     &unlbkt    &unrbkt     &unbslh    &kp LS(RET)
+                   &trans   &trans   &psuedo_shift &kp LS(TAB) &kp DEL     &mo NUM_L  &trans     &trans
             >;
         };
 
