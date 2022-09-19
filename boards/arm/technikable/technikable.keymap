@@ -191,7 +191,7 @@
             label = "alter";
             bindings = <
 &trans     &kp LS(N1) &kp LS(N2) &kp LS(N3)  &kp LS(N4)   &kp LS(N5)   &kp GT     &kp TILDE    &kp UNDER    &kp PLUS      &kp LS(TAB) &trans
-&trans     &kp LS(N6) &kp LS(N7) &kp LS(N8)  &kp LS(N9)   &kp LS(N0)   &kp RBKT   &kp LBKT     &kp LS(UARW) &kp LG(LC(D)) &kp COLON   &trans
+&trans     &kp LS(N6) &kp LS(N7) &kp LS(N8)  &kp LS(N9)   &kp LS(N0)   &kp LBKT   &kp RBKT     &kp LS(UARW) &kp LG(LC(D)) &kp COLON   &trans
 &trans     &kp LG(Z)  &kp LG(X)  &kp LG(C)   &kp LG(V)    &kp LG(B)    &kp F12    &kp LS(LARW) &kp LS(DARW) &kp LS(RARW)  &kp BSLH    &trans
                       &trans     &bt BT_CLR  &trans       &trans       &kp DEL    &trans       &bt BT(0)    &bt BT_NXT
             >;
