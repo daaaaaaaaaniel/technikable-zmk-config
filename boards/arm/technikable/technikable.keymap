@@ -185,10 +185,10 @@
         shift_layer {
             label = "Shift";
             bindings = <
- &trans   &trans   &trans   &trans   &trans    &trans      &trans   &trans     &trans    &trans    &trans     &trans
- &trans   &trans   &trans   &trans   &trans    &trans      &trans   &trans     &trans    &trans    &kp DQT    &trans
- &trans   &trans   &trans   &trans   &trans    &trans      &trans   &trans     &kp LBKT  &kp RBKT  &kp BSLH   &trans
-                   &trans   &trans   &trans    &kp LS(TAB) &kp TAB  &mo NUM_L  &trans    &trans
+ &trans   &trans   &trans   &trans   &trans        &trans      &trans       &trans     &trans    &trans    &trans     &trans
+ &trans   &trans   &trans   &trans   &trans        &trans      &trans       &trans     &trans    &trans    &kp DQT    &trans
+ &kp CAPS &trans   &trans   &trans   &trans        &trans      &trans       &trans     &kp LBKT  &kp RBKT  &kp BSLH   &kp LS(RET)
+                   &trans   &trans   &psuedo_shift &kp LS(TAB) &mt LCMD TAB &mo NUM_L  &trans    &trans
             >;
         };
 
