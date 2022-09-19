@@ -88,6 +88,46 @@
                 , <&macro_release &mo 1 &sk LSHFT>
                 ;
         };
+	unshift_tab: unshift_tab {
+            label = "unshift_tab";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_release &sk LSHFT>
+                , <&macro_tap &kp TAB>
+                , <&macro_press &sk LSHFT>
+                ;
+        };
+	unshift_lbkt: unshift_lbkt {
+            label = "unshift_lbkt";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_release &sk LSHFT>
+                , <&macro_tap &kp LBKT>
+                , <&macro_press &sk LSHFT>
+                ;
+        };
+	unshift_rbkt: unshift_rbkt {
+            label = "unshift_rbkt";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_release &sk LSHFT>
+                , <&macro_tap &kp RBKT>
+                , <&macro_press &sk LSHFT>
+                ;
+        };
+	unshift_bslh: unshift_bslh {
+            label = "unshift_bslh";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_release &sk LSHFT>
+                , <&macro_tap &kp BSLH>
+                , <&macro_press &sk LSHFT>
+                ;
+        };
     };
 
     
@@ -185,10 +225,10 @@
         shift_layer {
             label = "Shift";
             bindings = <
- &trans   &trans   &trans   &trans   &trans        &trans      &trans       &trans     &trans    &trans    &trans     &trans
- &trans   &trans   &trans   &trans   &trans        &trans      &trans       &trans     &trans    &trans    &kp DQT    &trans
- &kp CAPS &trans   &trans   &trans   &trans        &trans      &trans       &trans     &kp LBKT  &kp RBKT  &kp BSLH   &kp LS(RET)
-                   &trans   &trans   &psuedo_shift &kp LS(TAB) &mt LCMD TAB &mo NUM_L  &trans    &trans
+ &trans   &trans   &trans   &trans   &trans        &trans      &trans        &trans     &trans         &trans         &trans         &trans
+ &trans   &trans   &trans   &trans   &trans        &trans      &trans        &trans     &trans         &trans         &kp DQT        &trans
+ &kp CAPS &trans   &trans   &trans   &trans        &trans      &trans        &trans     &unshift_lbkt  &unshift_rbkt  &unshift_bslh  &kp LS(RET)
+                   &trans   &trans   &psuedo_shift &kp LS(TAB) &unshift_tab  &mo NUM_L  &trans    &trans
             >;
         };
 
