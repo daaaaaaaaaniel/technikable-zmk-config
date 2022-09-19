@@ -14,11 +14,11 @@
 // #define TBLE_DUAL_2U true
 
 #define BAS_L 0
-#define SFT_L 1
+#define SY2_L 1
 #define NAV_L 2
 #define NUM_L 3
 #define SYM_L 4
-#define SY2_L 5
+#define SFT_L 5
 #define FUN_L 6
 #define SET_L 7
 
@@ -52,8 +52,8 @@
 	    then-layer = <SYM_L>;
 	};
 	tri_layer {
-	    if-layers = <SFT_L NUM_L>;
-	    then-layer = <SY2_L>;
+	    if-layers = <SY2_L NUM_L>;
+	    then-layer = <SFT_L>;
 	};
     };
     
@@ -183,25 +183,25 @@
  &sk LCMD   &kp Q      &kp W      &kp E       &kp R          &kp T          &kp Y            &kp U          &kp I       &kp O      &kp P         &kp RCMD
  &kp LALT   &kp A      &kp S      &kp D       &kp F          &kp G          &kp H            &kp J          &kp K       &kp L      &kp QUOT      &kp RALT
  &sk LSHFT  &kp Z      &kp X      &kp C       &kp V          &kp B          &kp N            &kp M          &kp COMMA   &kp DOT    &kp FSLH      &kp RSHFT
-                       &kp LG(LCTRL) &kp LG(LALT) &sl SFT_L  &mo NAV_L      &kp SPACE        &mo NUM_L      &sk RSHFT   &kp CAPS
+                       &kp LG(LCTRL) &kp LG(LALT) &sl SY2_L  &mo NAV_L      &kp SPACE        &mo NUM_L      &sk RSHFT   &kp CAPS
             >;
         };
 	
-        shift_layer {
-            label = "Shift";
+        sym2_layer {
+            label = "Sym2";
             bindings = <
- &trans   &kp LS(Q)    &kp LS(W)   &kp LS(E)   &kp LS(R)   &kp LS(T)    &kp LS(Y)   &kp LS(U)    &kp LS(I)    &kp LS(O)    &kp LS(P)   &trans
- &trans   &kp LS(A)    &kp LS(S)   &kp LS(D)   &kp LS(F)   &kp LS(G)    &kp LS(H)   &kp LS(J)    &kp LS(K)    &kp LS(L)    &kp DQT     &trans
- &trans   &kp LS(Z)    &kp LS(X)   &kp LS(C)   &kp LS(V)   &kp LS(B)    &kp LS(N)   &kp LS(M)    &kp LBKT     &kp RBKT     &kp BSLH    &trans
-                       &trans      &trans      &sl SFT_L   &trans       &kp DEL     &mo NUM_L    &trans       &trans
+&bt BT_CLR &kp LS(N1) &kp LS(N2) &kp LS(N3)  &kp LS(N4)   &kp LS(N5)   &kp LPAR   &kp RPAR     &kp UNDER    &kp PLUS     &kp TILDE  &kp RCTRL
+&trans     &kp LS(N6) &kp LS(N7) &kp LS(N8)  &kp LS(N9)   &kp LS(N0)   &kp LBRC   &kp RBRC     &kp LS(UARW) &kp INS      &kp SEMI   &kp RALT
+&trans     &kp LG(Z)  &kp LG(X)  &kp LG(C)   &kp LG(V)    &kp LG(B)    &kp F12    &kp LS(LARW) &kp LS(DARW) &kp LS(RARW) &kp PIPE   &kp RCMD
+                      &trans     &kp LS(N0)  &trans       &trans       &trans     &trans       &bt BT(0)    &bt BT(1)
             >;
         };
 
         nav_layer {
             label = "Nav";
             bindings = <
-&kp LCMD   &kp EXCL   &kp AT     &kp HASH    &kp DLLR        &kp PRCNT    &kp LPAR   &kp RPAR       &kp MINUS   &kp EQUAL  &kp TAB    &trans
-&kp LALT   &kp CARET  &kp AMPS   &kp ASTRK   &kp LC(LS(TAB)) &kp LC(TAB)  &trans     &kp TAB        &kp UARW    &kp GRAVE  &kp COLON  &kp CAPS
+&kp LCMD   &kp EXCL   &kp AT     &kp HASH    &kp DLLR        &kp PRCNT    &kp LPAR   &kp RPAR       &kp MINUS   &kp EQUAL  &kp GRAVE  &trans
+&kp LALT   &kp CARET  &kp AMPS   &kp ASTRK   &kp LC(LS(TAB)) &kp LC(TAB)  &kp LBKT   &kp RBKT       &kp UARW    &kp TAB    &kp COLON  &kp CAPS
 &kp LCTRL  &trans     &trans     &trans      &trans          &trans       &trans     &kp LARW       &kp DARW    &kp RARW   &kp BSLH   &kp RET
                       &trans     &trans      &trans          &trans       &kp BKSP  &trans  &trans         &trans
             >;
@@ -227,13 +227,13 @@
             >;
         };
 	
-        sym2_layer {
-            label = "Sym2";
+        shift_layer {
+            label = "Shift";
             bindings = <
-&bt BT_CLR &kp LS(N1) &kp LS(N2) &kp LS(N3)  &kp LS(N4)   &kp LS(N5)   &kp LS(N6) &kp LS(N7)   &kp LS(N8)   &kp LS(N9)   &kp LS(N0) &kp RCTRL
-&trans     &kp LG(A)  &kp LG(S)  &kp LG(D)   &kp LG(F)    &kp LG(H)    &kp F6     &kp LS(TAB)  &kp LS(UARW) &kp TILDE    &kp SEMI   &kp RALT
-&trans     &kp LG(Z)  &kp LG(X)  &kp LG(C)   &kp LG(V)    &kp LG(B)    &kp F12    &kp LS(LARW) &kp LS(DARW) &kp LS(RARW) &kp PIPE   &kp RCMD
-                      &trans     &kp LS(N0)  &trans       &trans       &trans     &trans       &bt BT(0)    &bt BT(1)
+&trans   &kp LS(Q)    &kp LS(W)   &kp LS(E)   &kp LS(R)   &kp LS(T)    &kp LS(Y)   &kp LS(U)    &kp LS(I)    &kp LS(O)    &kp LS(P)   &trans
+&trans   &kp LS(A)    &kp LS(S)   &kp LS(D)   &kp LS(F)   &kp LS(G)    &kp LS(H)   &kp LS(J)    &kp LS(K)    &kp LS(L)    &kp DQT     &trans
+&trans   &kp LS(Z)    &kp LS(X)   &kp LS(C)   &kp LS(V)   &kp LS(B)    &kp LS(N)   &kp LS(M)    &kp LBKT     &kp RBKT     &kp BSLH    &trans
+                       &trans      &trans      &sl SY2_L   &trans       &kp DEL     &mo NUM_L    &trans       &trans
             >;
         };
 	
