@@ -228,7 +228,7 @@
             bindings = <
  &trans   &trans   &trans   &trans   &trans        &trans      &trans        &trans     &trans         &trans         &trans         &trans
  &trans   &trans   &trans   &trans   &trans        &trans      &trans        &trans     &trans         &trans         &kp DQT        &trans
- &kp CAPS &trans   &trans   &trans   &trans        &trans      &trans        &trans     &LBKT     &kp RBKT     &kp BSLH  &kp LS(RET)
+ &kp CAPS &trans   &trans   &trans   &trans        &trans      &trans        &trans     &kp LBKT     &kp RBKT     &kp BSLH  &kp LS(RET)
                    &trans   &trans   &psuedo_shift &kp LS(TAB) &kp DEL       &mo NUM_L  &trans    &trans
             >;
         };
