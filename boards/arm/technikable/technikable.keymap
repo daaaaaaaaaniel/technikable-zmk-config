@@ -52,7 +52,7 @@
 	    then-layer = <SYM_L>;
 	};
 	tri_layer {
-	    if-layers = <SY2_L NUM_L>;
+	    if-layers = <ALT_L NUM_L>;
 	    then-layer = <SFT_L>;
 	};
     };
