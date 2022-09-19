@@ -32,6 +32,7 @@
 #define BT(n) BT_SEL n
 
 
+/ {
     chosen {
        zmk,matrix_transform =
 #ifdef TBLE_DUAL_2U
