@@ -31,6 +31,7 @@
 
 #define BT(n) BT_SEL n
 
+
 / {
     chosen {
        zmk,matrix_transform =
@@ -74,6 +75,21 @@
             mods = <MOD_RSFT>;
         };
     };
+    
+    
+    macros {
+        psuedo_shift: psuedo_shift {
+            label = "psuedo_shift";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &mo 1 &sk LSHFT>
+                , <&macro_pause_for_release>
+                , <&macro_release &mo 1 &sk LSHFT>
+                ;
+        };
+    };
+
     
     
     combos {
@@ -162,17 +178,17 @@
  &sk LCMD   &kp Q      &kp W      &kp E       &kp R          &kp T          &kp Y            &kp U          &kp I       &kp O      &kp P         &kp RCMD
  &kp LALT   &kp A      &kp S      &kp D       &kp F          &kp G          &kp H            &kp J          &kp K       &kp L      &kp QUOT      &kp RALT
  &sk LSHFT  &kp Z      &kp X      &kp C       &kp V          &kp B          &kp N            &kp M          &kp COMMA   &kp DOT    &kp FSLH      &kp RSHFT
-                       &kp LG(LCTRL) &kp LG(LALT) &sl SFT_L  &mo NAV_L      &kp SPACE        &mo NUM_L      &sk RSHFT   &kp CAPS
+                       &kp LG(LCTRL) &kp LG(LALT) &psuedo_shift &mo NAV_L   &kp SPACE        &mo NUM_L      &sk RSHFT   &kp CAPS
             >;
         };
 	
         shift_layer {
             label = "Shift";
             bindings = <
- &trans   &kp LS(Q)    &kp LS(W)   &kp LS(E)   &kp LS(R)   &kp LS(T)    &kp LS(Y)   &kp LS(U)    &kp LS(I)    &kp LS(O)    &kp LS(P)   &trans
- &trans   &kp LS(A)    &kp LS(S)   &kp LS(D)   &kp LS(F)   &kp LS(G)    &kp LS(H)   &kp LS(J)    &kp LS(K)    &kp LS(L)    &kp DQT     &trans
- &trans   &kp LS(Z)    &kp LS(X)   &kp LS(C)   &kp LS(V)   &kp LS(B)    &kp LS(N)   &kp LS(M)    &kp LBKT     &kp RBKT     &kp BSLH    &trans
-                       &trans      &trans      &sl SFT_L   &kp LS(TAB)  &kp TAB     &mo NUM_L    &trans       &trans
+ &trans   &trans   &trans   &trans   &trans        &trans      &trans       &trans     &trans    &trans    &trans     &trans
+ &trans   &trans   &trans   &trans   &trans        &trans      &trans       &trans     &trans    &trans    &kp DQT    &trans
+ &kp CAPS &trans   &trans   &trans   &trans        &trans      &trans       &trans     &kp LBKT  &kp RBKT  &kp BSLH   &kp LS(RET)
+                   &trans   &trans   &psuedo_shift &kp LS(TAB) &mt LCMD TAB &mo NUM_L  &trans    &trans
             >;
         };
 
