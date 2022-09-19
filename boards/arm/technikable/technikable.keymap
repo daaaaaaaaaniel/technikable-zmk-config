@@ -18,8 +18,9 @@
 #define NAV_L 2
 #define NUM_L 3
 #define SYM_L 4
-#define FUN_L 5
-#define SET_L 6
+#define SY2_L 5
+#define FUN_L 6
+#define SET_L 7
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
@@ -49,6 +50,10 @@
 	tri_layer {
 	    if-layers = <NAV_L NUM_L>;
 	    then-layer = <SYM_L>;
+	};
+	tri_layer {
+	    if-layers = <SFT_L NUM_L>;
+	    then-layer = <SY2_L>;
 	};
     };
     
@@ -98,13 +103,13 @@
              timeout-ms = <50>;
              key-positions = <0 11>;
              layers = <0>;
-             bindings = <&sl 5>;
+             bindings = <&sl 6>;
          };
 	combo_settingslayer {
              timeout-ms = <50>;
              key-positions = <0 11>;
              layers = <NAV_L NUM_L>;
-             bindings = <&sl 6>;
+             bindings = <&sl 7>;
          };
 	combo_prevtab {
              timeout-ms = <50>;
@@ -157,13 +162,13 @@
 	combo_shifttab {
              timeout-ms = <50>;
              key-positions = <7 8 9>;
-             layers = <1 2>;
+             layers = <NAV_L NUM_L>;
              bindings = <&kp LS(TAB)>;
          };
 	combo_shiftreturn {
              timeout-ms = <50>;
              key-positions = <19 20 21>;
-             layers = <1 2>;
+             layers = <NAV_L NUM_L>;
              bindings = <&kp LS(RET)>;
          };
     };
@@ -178,17 +183,17 @@
  &sk LCMD   &kp Q      &kp W      &kp E       &kp R          &kp T          &kp Y            &kp U          &kp I       &kp O      &kp P         &kp RCMD
  &kp LALT   &kp A      &kp S      &kp D       &kp F          &kp G          &kp H            &kp J          &kp K       &kp L      &kp QUOT      &kp RALT
  &sk LSHFT  &kp Z      &kp X      &kp C       &kp V          &kp B          &kp N            &kp M          &kp COMMA   &kp DOT    &kp FSLH      &kp RSHFT
-                       &kp LG(LCTRL) &kp LG(LALT) &psuedo_shift &mo NAV_L   &kp SPACE        &mo NUM_L      &sk RSHFT   &kp CAPS
+                       &kp LG(LCTRL) &kp LG(LALT) &sl SFT_L  &mo NAV_L      &kp SPACE        &mo NUM_L      &sk RSHFT   &kp CAPS
             >;
         };
 	
         shift_layer {
             label = "Shift";
             bindings = <
- &trans   &trans   &trans   &trans   &trans        &trans      &trans       &trans     &trans    &trans    &trans     &trans
- &trans   &trans   &trans   &trans   &trans        &trans      &trans       &trans     &trans    &trans    &kp DQT    &trans
- &kp CAPS &trans   &trans   &trans   &trans        &trans      &trans       &trans     &kp LBKT  &kp RBKT  &kp BSLH   &kp LS(RET)
-                   &trans   &trans   &psuedo_shift &kp LS(TAB) &mt LCMD TAB &mo NUM_L  &trans    &trans
+ &trans   &kp LS(Q)    &kp LS(W)   &kp LS(E)   &kp LS(R)   &kp LS(T)    &kp LS(Y)   &kp LS(U)    &kp LS(I)    &kp LS(O)    &kp LS(P)   &trans
+ &trans   &kp LS(A)    &kp LS(S)   &kp LS(D)   &kp LS(F)   &kp LS(G)    &kp LS(H)   &kp LS(J)    &kp LS(K)    &kp LS(L)    &kp DQT     &trans
+ &trans   &kp LS(Z)    &kp LS(X)   &kp LS(C)   &kp LS(V)   &kp LS(B)    &kp LS(N)   &kp LS(M)    &kp LBKT     &kp RBKT     &kp BSLH    &trans
+                       &trans      &trans      &sl SFT_L   &trans       &kp DEL     &mo NUM_L    &trans       &trans
             >;
         };
 
@@ -214,6 +219,16 @@
 
         sym_layer {
             label = "Sym";
+            bindings = <
+&bt BT_CLR &kp LS(N1) &kp LS(N2) &kp LS(N3)  &kp LS(N4)   &kp LS(N5)   &kp LS(N6) &kp LS(N7)   &kp LS(N8)   &kp LS(N9)   &kp LS(N0) &kp RCTRL
+&trans     &kp LG(A)  &kp LG(S)  &kp LG(D)   &kp LG(F)    &kp LG(H)    &kp F6     &kp LS(TAB)  &kp LS(UARW) &kp TILDE    &kp SEMI   &kp RALT
+&trans     &kp LG(Z)  &kp LG(X)  &kp LG(C)   &kp LG(V)    &kp LG(B)    &kp F12    &kp LS(LARW) &kp LS(DARW) &kp LS(RARW) &kp PIPE   &kp RCMD
+                      &trans     &kp LS(N0)  &trans       &trans       &trans     &trans       &bt BT(0)    &bt BT(1)
+            >;
+        };
+	
+        sym2_layer {
+            label = "Sym2";
             bindings = <
 &bt BT_CLR &kp LS(N1) &kp LS(N2) &kp LS(N3)  &kp LS(N4)   &kp LS(N5)   &kp LS(N6) &kp LS(N7)   &kp LS(N8)   &kp LS(N9)   &kp LS(N0) &kp RCTRL
 &trans     &kp LG(A)  &kp LG(S)  &kp LG(D)   &kp LG(F)    &kp LG(H)    &kp F6     &kp LS(TAB)  &kp LS(UARW) &kp TILDE    &kp SEMI   &kp RALT
