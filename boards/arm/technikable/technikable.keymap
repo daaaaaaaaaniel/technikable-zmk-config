@@ -86,7 +86,7 @@
                 = <&macro_press &mo 1 &kp LSHFT>
 		, <&macro_tap &sk LSHFT>
                 , <&macro_pause_for_release>
-                , <&macro_release &mo 1 &sk LSHFT>
+                , <&macro_release &mo 1 &kp LSHFT>
                 ;
         };
 	unshift_tab: unshift_tab {
