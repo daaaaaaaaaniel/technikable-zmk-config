@@ -94,9 +94,9 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_release &sk LSHFT>
+                = <&macro_release &kp LSHFT>
                 , <&macro_tap &kp TAB>
-                , <&macro_press &sk LSHFT>
+                , <&macro_press &kp LSHFT>
                 ;
         };
 	unshift_lbkt: unshift_lbkt {
@@ -104,9 +104,9 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_release &sk LSHFT>
+                = <&macro_release &kp LSHFT>
                 , <&macro_tap &kp LBKT>
-                , <&macro_press &sk LSHFT>
+                , <&macro_press &kp LSHFT>
                 ;
         };
 	unshift_rbkt: unshift_rbkt {
@@ -114,9 +114,9 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_release &sk LSHFT>
+                = <&macro_release &kp LSHFT>
                 , <&macro_tap &kp RBKT>
-                , <&macro_press &sk LSHFT>
+                , <&macro_press &kp LSHFT>
                 ;
         };
 	unshift_bslh: unshift_bslh {
@@ -124,9 +124,9 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_release &sk LSHFT>
+                = <&macro_release &kp LSHFT>
                 , <&macro_tap &kp BSLH>
-                , <&macro_press &sk LSHFT>
+                , <&macro_press &kp LSHFT>
                 ;
         };
     };
@@ -228,7 +228,7 @@
             bindings = <
  &trans   &trans   &trans   &trans   &trans        &trans      &trans        &trans     &trans         &trans         &trans         &trans
  &trans   &trans   &trans   &trans   &trans        &trans      &trans        &trans     &trans         &trans         &kp DQT        &trans
- &kp CAPS &trans   &trans   &trans   &trans        &trans      &trans        &trans     &kp LBKT     &kp RBKT     &kp BSLH  &kp LS(RET)
+ &kp CAPS &trans   &trans   &trans   &trans        &trans      &trans        &trans     &unshift_lbkt  &unshift_rbkt  &unshift_bslh  &kp LS(RET)
                    &trans   &trans   &psuedo_shift &kp LS(TAB) &kp DEL       &mo NUM_L  &trans    &trans
             >;
         };
