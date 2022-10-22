@@ -60,7 +60,7 @@
 #ifdef TBLE_DUAL_2U
                        &kp LCTRL  &kp LCMD      &lt NAV_L SPACE                &lt NUM_L SPACE              &kp RCMD    &kp RCTRL
 #elif defined(TBLE_MIT)
-                       &kp LCTRL  &kp LCMD    &mo NAV_L          &kp SPACE                   &mo NUM_L      &kp RCMD    &kp RCTRL
+                       &kp LCTRL  &kp LCMD    &mo NAV_L          &mt LSHIFT SPACE            &mo NUM_L      &kp RCMD    &kp RCTRL
 #else
                        &kp LCTRL  &kp LCMD    &mo NAV_L      &kp SPACE      &kp SPACE        &mo NUM_L      &kp RCMD    &kp RCTRL
 #endif
@@ -102,9 +102,9 @@
         sym_layer {
             label = "Sym";
             bindings = <
-&kp LCMD   &kp EXCL   &kp AT     &kp HASH    &kp DLLR     &kp PRCNT    &kp C_BRI_UP  &kp UNDER    &kp LS(UARW) &kp PLUS     &kp TILDE   &kp LS(TAB)
-&kp LBRC   &kp RBRC   &kp LS(N4) &kp LS(N5)  &kp LS(N6)   &kp LS(BSLH) &kp C_BRI_DN  &kp LS(LARW) &kp LS(DARW) &kp LS(RARW) &kp DQT     &kp COLON
-&kp LT     &kp GT     &kp CARET  &kp AMPS    &kp LS(N9)   &kp LS(N0)   &kp LG(LC(D)) &kp LG(LC(SPACE)) &kp HOME     &kp END      &kp LS(RET) &kp ESC
+&sk LCMD          &kp EXCL   &kp AT     &kp HASH    &kp DLLR     &kp C_BRI_DN  &kp C_VOL_DN &kp UNDER &kp LPAR        &kp CARET  &kp TILDE &trans
+&sk LALT          &kp LBRC   &kp RBRC   &kp LBKT    &kp RBKT     &kp C_BRI_UP  &kp C_VOL_UP &kp PLUS  &kp RPAR        &kp AMPS   &kp COLON &trans
+&kp LG(LC(SPACE)) &kp LT     &kp GT     &kp LPAR    &kp RPAR     &kp LG(LC(D)) &kp K_MUTE   &kp KP_ASTERISK &kp HOME  &kp END    &LG(LC(SPACE)) &trans
 #ifdef TBLE_DUAL_2U
                       &trans     &trans               &trans                &trans                &trans       &trans
 #elif defined(TBLE_MIT)
