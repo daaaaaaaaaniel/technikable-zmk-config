@@ -82,8 +82,8 @@
             label = "Nav";
             bindings = <
 &trans     &trans     &trans     &trans      &trans          &trans       &kp CARET  &kp MINUS      &kp UARW    &kp EQUAL  &kp GRAVE  &kp TAB
-&trans     &trans     &trans     &trans      &trans          &trans       &kp HASH   &kp LARW       &kp DARW    &kp RARW   &kp DQT    &kp SEMI
-&trans     &trans     &trans     &trans      &trans          &trans       &kp PRCNT  &kp ASTRK      &kp LT      &kp GT     &kp RET    &kp ESC
+&trans     &trans     &trans     &trans      &trans          &trans       &kp PRCNT  &kp LARW       &kp DARW    &kp RARW   &kp DQT    &kp SEMI
+&trans     &trans     &trans     &trans      &trans          &trans       &kp LT     &kp GT         &kp ASTRK   &kp HASH   &kp RET    &kp ESC
 #ifdef TBLE_DUAL_2U
                       &trans     &trans              &trans                     &lt NUM_L BKSP      &trans      &trans
 #elif defined(TBLE_MIT)
@@ -113,15 +113,15 @@
         sym_layer {
             label = "Sym";
             bindings = <
-&kp TILDE   &kp EXCL   &kp AT     &kp HASH    &kp DLLR     &kp C_BRI_DN  &kp C_VOL_DN &kp UNDER &kp LPAR        &kp LBKT   &kp TILDE &trans
-&kp LS(TAB) &kp PRCNT  &kp CARET  &kp AMPS    &kp ASTRK    &kp C_BRI_UP  &kp C_VOL_UP &kp PLUS  &kp RPAR        &kp RBKT   &trans    &kp COLON
-&kp CAPS    &kp LT     &kp GT     &kp LBRC    &kp RBRC     &kp LG(LC(D)) &kp K_MUTE   &kp KP_ASTERISK &kp HOME  &kp END    &kp LG(LC(SPACE)) &kp LG(LC(SPACE))
+&kp TILDE   &kp EXCL   &kp AT     &kp HASH    &kp DLLR     &kp C_BRI_DN  &kp C_VOL_DN &kp UNDER &kp LPAR     &kp LBKT   &kp TILDE &trans
+&kp LS(TAB) &kp PRCNT  &kp CARET  &kp AMPS    &kp ASTRK    &kp C_BRI_UP  &kp C_VOL_UP &kp PLUS  &kp RPAR     &kp RBKT   &trans    &kp COLON
+&kp CAPS    &kp LT     &kp GT     &kp LBRC    &kp RBRC     &kp LG(LC(D)) &kp K_MUTE   &kp INS   &kp HOME     &kp END    &kp LG(LC(SPACE)) &kp LG(LC(SPACE))
 #ifdef TBLE_DUAL_2U
-                      &trans     &trans               &trans                &trans                &trans       &trans
+                      &trans     &trans               &trans                &trans              &trans       &trans
 #elif defined(TBLE_MIT)
-                      &trans     &trans      &trans               &trans             &trans       &trans       &trans
+                      &trans     &trans      &trans               &trans             &trans     &trans       &trans
 #else
-                      &trans     &trans      &trans       &trans       &trans        &trans       &trans       &trans
+                      &trans     &trans      &trans       &trans       &trans        &trans     &trans       &trans
 #endif
             >;
         };
