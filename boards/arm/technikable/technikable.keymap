@@ -65,15 +65,15 @@
         base_layer {
             label = "Base";
             bindings = <
- &sk LCMD   &kp Q      &kp W      &kp E       &kp R          &kp T          &kp Y            &kp U          &kp I       &kp O      &kp P         &sk RCMD 
- &sk LALT   &kp A      &kp S      &kp D       &kp F          &kp G          &kp H            &kp J          &kp K       &kp L      &kp QUOT      &sk RALT 
- &sk LSHFT  &kp Z      &kp X      &kp C       &kp V          &kp B          &kp N            &kp M          &kp COMMA   &kp DOT    &kp FSLH      &sk RSHFT
+ &sk LCMD   &kp Q      &kp W      &kp E       &kp R          &kp T          &kp Y            &kp U           &kp I       &kp O      &kp P         &sk RCMD 
+ &sk LALT   &kp A      &kp S      &kp D       &kp F          &kp G          &kp H            &kp J           &kp K       &kp L      &kp QUOT      &sk RALT 
+ &sk LSHFT  &kp Z      &kp X      &kp C       &kp V          &kp B          &kp N            &kp M           &kp COMMA   &kp DOT    &kp FSLH      &sk RSHFT
 #ifdef TBLE_DUAL_2U
-                       &kp LCTRL  &kp LCMD      &lt NAV_L SPACE                &lt NUM_L SPACE              &kp RCMD    &kp RCTRL
+                       &kp LCTRL  &kp LCMD      &lt NAV_L SPACE                &lt NUM_L SPACE               &kp RCMD    &kp RCTRL
 #elif defined(TBLE_MIT)
-                       &kp LCTRL  &kp LCMD    &mo NAV_L             &td_mt                   &mo NUM_L      &kp RCMD    &kp RCTRL
+                       &kp LCTRL  &kp LCMD    &mo NAV_L             &td_mt                   &lt NUM_L SPACE &kp RCMD    &kp RCTRL
 #else
-                       &kp LCTRL  &kp LCMD    &mo NAV_L      &kp SPACE      &kp SPACE        &mo NUM_L      &kp RCMD    &kp RCTRL
+                       &kp LCTRL  &kp LCMD    &mo NAV_L      &kp SPACE      &kp SPACE        &mo NUM_L       &kp RCMD    &kp RCTRL
 #endif
             >;
         };
