@@ -65,13 +65,13 @@
         nav_layer {
             label = "Nav";
             bindings = <
-&trans     &trans     &trans     &trans      &trans          &trans       &kp HASH   &kp MINUS      &kp UARW    &kp EQUAL  &kp GRAVE  &kp TAB
-&trans     &trans     &trans     &trans      &trans          &trans       &kp ASTRK  &kp LARW       &kp DARW    &kp RARW   &kp DQT    &kp SEMI
-&trans     &trans     &trans     &trans      &trans          &trans       &kp CARET  &kp C_AC_DESKTOP_SHOW_ALL_APPLICATIONS      &kp PG_DN   &kp PG_UP  &kp RET    &kp ESC
+&trans     &trans     &trans     &trans      &trans          &trans       &kp CARET  &kp MINUS      &kp UARW    &kp EQUAL  &kp GRAVE  &kp TAB
+&trans     &trans     &trans     &trans      &trans          &trans       &kp HASH   &kp LARW       &kp DARW    &kp RARW   &kp DQT    &kp SEMI
+&trans     &trans     &trans     &trans      &trans          &trans       &kp PRCNT  &kp ASTRK      &kp PG_DN   &kp PG_UP  &kp RET    &kp ESC
 #ifdef TBLE_DUAL_2U
                       &trans     &trans              &trans                     &trans              &trans      &trans
 #elif defined(TBLE_MIT)
-                      &bt BT(0)  &bt BT(1)   &trans                &kp BKSP          &trans         &bt BT(2)   &bt BT_CLR
+                      &bt BT(0)  &bt BT(1)   &trans              &mt LSHIFT BKSP     &trans         &bt BT(2)   &bt BT_CLR
 #else
                       &trans     &trans      &trans          &trans       &trans     &trans         &trans      &trans
 #endif
@@ -81,13 +81,13 @@
         num_layer {
             label = "Num";
             bindings = <
-&kp LCMD   &kp EXCL   &kp N1     &kp N2      &kp N3    &kp COLON   &kp C_PREV    &trans         &trans       &trans       &trans     &trans
-&kp LBKT   &kp RBKT   &kp N4     &kp N5      &kp N6    &kp BSLH    &kp C_NEXT    &trans         &trans       &trans       &trans     &trans
-&kp LPAR   &kp RPAR   &kp N7     &kp N8      &kp N9    &kp N0      &trans        &trans         &trans       &trans       &trans     &trans
+&kp LCMD   &kp EXCL   &kp N1     &kp N2      &kp N3    &kp COLON   &kp C_VOL_DN  &trans         &trans       &trans       &trans     &trans
+&kp LBKT   &kp RBKT   &kp N4     &kp N5      &kp N6    &kp BSLH    &kp C_VOL_UP  &trans         &trans       &trans       &trans     &trans
+&kp LPAR   &kp RPAR   &kp N7     &kp N8      &kp N9    &kp N0      &kp K_MUTE    &trans         &trans       &trans       &trans     &trans
 #ifdef TBLE_DUAL_2U
                       &trans     &trans          &trans                    &trans               &trans       &trans
 #elif defined(TBLE_MIT)
-                      &trans     &trans      &trans           &kp DEL            &trans         &trans       &trans
+                      &trans     &trans      &trans       &mt LSHIFT DEL         &trans         &trans       &trans
 #else
                       &trans     &trans      &trans    &none       &none         &trans         &trans       &trans
 #endif
@@ -97,15 +97,15 @@
         sym_layer {
             label = "Sym";
             bindings = <
-&kp LCMD   &kp EXCL   &kp AT     &kp HASH    &kp DLLR     &kp PRCNT    &trans     &kp UNDER    &kp LS(UARW)       &kp PLUS       &kp TILDE  &kp LS(TAB)
-&kp LBRC   &kp RBRC   &kp LS(N4) &kp LS(N5)  &kp LS(N6)   &kp LS(BSLH) &trans     &kp LS(LARW) &kp LS(DARW) &kp LS(RARW)       &kp DQT    &kp COLON
-&kp GT     &kp LT     &kp CARET  &kp AMPS    &kp LS(N9)   &kp LS(N0)   &trans     &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS    &kp HOME       &kp END       &kp LS(RET)     &kp ESC
+&kp LCMD   &kp EXCL   &kp AT     &kp HASH    &kp DLLR     &kp PRCNT    &kp C_BRI_UP  &kp UNDER    &kp LS(UARW) &kp PLUS     &kp TILDE   &kp LS(TAB)
+&kp LBRC   &kp RBRC   &kp LS(N4) &kp LS(N5)  &kp LS(N6)   &kp LS(BSLH) &kp C_BRI_DN  &kp LS(LARW) &kp LS(DARW) &kp LS(RARW) &kp DQT     &kp COLON
+&kp LT     &kp GT     &kp CARET  &kp AMPS    &kp LS(N9)   &kp LS(N0)   &kp LG(LC(D)) &kp LG(LC(SPACE)) &kp HOME     &kp END      &kp LS(RET) &kp ESC
 #ifdef TBLE_DUAL_2U
-                      &trans     &trans               &trans                &trans             &trans       &trans
+                      &trans     &trans               &trans                &trans                &trans       &trans
 #elif defined(TBLE_MIT)
-                      &trans     &trans      &trans               &trans          &trans       &trans       &trans
+                      &trans     &trans      &trans               &trans             &trans       &trans       &trans
 #else
-                      &trans     &trans      &trans       &trans       &trans     &trans       &trans       &trans
+                      &trans     &trans      &trans       &trans       &trans        &trans       &trans       &trans
 #endif
             >;
         };
