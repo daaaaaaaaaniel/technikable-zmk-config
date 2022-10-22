@@ -104,7 +104,7 @@
             bindings = <
 &sk LCMD          &kp EXCL   &kp AT     &kp HASH    &kp DLLR     &kp C_BRI_DN  &kp C_VOL_DN &kp UNDER &kp LPAR        &kp CARET  &kp TILDE &trans
 &sk LALT          &kp LBRC   &kp RBRC   &kp LBKT    &kp RBKT     &kp C_BRI_UP  &kp C_VOL_UP &kp PLUS  &kp RPAR        &kp AMPS   &kp COLON &trans
-&kp LG(LC(SPACE)) &kp LT     &kp GT     &kp LPAR    &kp RPAR     &kp LG(LC(D)) &kp K_MUTE   &kp KP_ASTERISK &kp HOME  &kp END    &LG(LC(SPACE)) &trans
+&kp LG(LC(SPACE)) &kp LT     &kp GT     &kp LPAR    &kp RPAR     &kp LG(LC(D)) &kp K_MUTE   &kp KP_ASTERISK &kp HOME  &kp END    &kp LG(LC(SPACE)) &trans
 #ifdef TBLE_DUAL_2U
                       &trans     &trans               &trans                &trans                &trans       &trans
 #elif defined(TBLE_MIT)
