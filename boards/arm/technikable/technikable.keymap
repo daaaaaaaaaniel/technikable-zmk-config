@@ -116,7 +116,7 @@
 #ifdef TBLE_DUAL_2U
                       &trans     &trans          &lt NAV_L DEL             &trans               &trans       &trans
 #elif defined(TBLE_MIT)
-                      &trans     &trans      &lt NAV_L DEL   &mt LSHIFT DEL      &trans         &trans       &trans
+                      &trans     &trans      &lt NAV_L BKSP  &mt LSHIFT DEL      &trans         &trans       &trans
 #else
                       &trans     &trans      &trans    &th LSHIFT DEL &trans     &trans         &trans       &trans
 #endif
