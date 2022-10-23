@@ -17,6 +17,8 @@
 #define NAV_L 1
 #define NUM_L 2
 #define SYM_L 3
+#define LHR_L 4
+#define RHR_L 5
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
@@ -135,6 +137,38 @@
                       &trans     &trans      &trans               &trans             &trans     &trans       &trans
 #else
                       &trans     &trans      &trans       &trans       &trans        &trans     &trans       &trans
+#endif
+            >;
+        };
+	
+        left_home_layer {
+            label = "LeftHome";
+            bindings = <
+&trans    &trans   &trans     &trans      &trans    &trans    &trans  &trans         &trans       &trans       &trans     &trans
+&trans    &trans   &kp LCTRL  &kp LALT    &kp LCMD  &kp LSHFT &trans  &trans         &trans       &trans       &trans     &trans
+&mo LHR_L &trans   &trans     &trans      &trans    &trans    &trans  &trans         &trans       &trans       &trans     &mo RHR_R
+#ifdef TBLE_DUAL_2U
+                   &trans     &trans             &trans            &trans            &trans       &trans
+#elif defined(TBLE_MIT)
+                   &trans     &trans      &trans           &trans     &trans         &trans       &trans
+#else
+                   &trans     &trans      &trans    &trans    &trans  &trans         &trans       &trans
+#endif
+            >;
+        };
+	
+        right_home_layer {
+            label = "RightHome";
+            bindings = <
+&trans    &trans   &trans     &trans      &trans    &trans   &trans    &trans         &trans       &trans       &trans     &trans
+&trans    &trans   &trans     &trans      &trans    &trans   &kp RSHFT &kp RCMD       &kp RALT     &kp RCTRL    &trans     &trans
+&mo LHR_L &trans   &trans     &trans      &trans    &trans   &trans    &trans         &trans       &trans       &trans     &mo RHR_R
+#ifdef TBLE_DUAL_2U
+                   &trans     &trans             &trans           &trans              &trans       &trans
+#elif defined(TBLE_MIT)
+                   &trans     &trans      &trans          &trans       &trans         &trans       &trans
+#else
+                   &trans     &trans      &trans    &trans   &trans    &trans         &trans       &trans
 #endif
             >;
         };
