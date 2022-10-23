@@ -15,10 +15,8 @@
 
 #define BAS_L 0
 #define NAV_L 1
-#define NUM_L 2
-#define SYM_L 3
-#define LHR_L 4
-#define RHR_L 5
+#define SYM_L 2
+#define NUM_L 3
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
 &lt { quick_tap_ms = <200>; };
@@ -45,8 +43,8 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
 	tri_layer {
-	    if-layers = <NAV_L NUM_L>;
-	    then-layer = <SYM_L>;
+	    if-layers = <NAV_L SYM_L>;
+	    then-layer = <NUM_L>;
 	};
     };
     
@@ -84,11 +82,11 @@
  &sk LALT   &kp A      &kp S      &kp D       &kp F          &kp G          &kp H            &kp J           &kp K       &kp L      &kp QUOT      &sk RALT 
  &sk LSHFT  &kp Z      &kp X      &kp C       &kp V          &kp B          &kp N            &kp M           &kp COMMA   &kp DOT    &kp FSLH      &sk RSHFT
 #ifdef TBLE_DUAL_2U
-                       &kp LCTRL  &kp LCMD      &lt NAV_L SPACE                &lt NUM_L SPACE               &kp RCMD    &kp RCTRL
+                       &kp LCTRL  &kp LCMD      &lt NAV_L SPACE                &lt SYM_L SPACE               &kp RCMD    &kp RCTRL
 #elif defined(TBLE_MIT)
-                       &kp LCTRL  &kp LCMD    &lt NAV_L BKSP        &th LSHIFT SPACE         &lt NUM_L SPACE &kp RCMD    &kp RCTRL
+                       &kp LCTRL  &kp LCMD    &lt NAV_L BKSP        &th LSHIFT SPACE         &lt SYM_L SPACE &kp RCMD    &kp RCTRL
 #else
-                       &kp LCTRL  &kp LCMD    &lt NAV_L BKSP &th LSHIFT SPACE &kp SPACE      &mo NUM_L       &kp RCMD    &kp RCTRL
+                       &kp LCTRL  &kp LCMD    &lt NAV_L BKSP &th LSHIFT SPACE &kp SPACE      &mo SYM_L       &kp RCMD    &kp RCTRL
 #endif
             >;
         };
@@ -100,21 +98,21 @@
 &trans     &trans     &trans     &trans      &trans          &trans       &kp PRCNT  &kp LARW       &kp DARW    &kp RARW   &kp DQT    &kp SEMI
 &trans     &trans     &trans     &trans      &trans          &trans       &kp LT     &kp GT         &kp ASTRK   &kp HASH   &kp RET    &kp ESC
 #ifdef TBLE_DUAL_2U
-                      &trans     &trans              &trans                     &lt NUM_L BKSP      &trans      &trans
+                      &trans     &trans              &trans                     &lt SYM_L BKSP      &trans      &trans
 #elif defined(TBLE_MIT)
-                      &bt BT(0)  &bt BT(1)   &trans              &mt LSHIFT BKSP     &lt NUM_L DEL  &bt BT(2)   &bt BT_CLR
+                      &bt BT(0)  &bt BT(1)   &trans              &mt LSHIFT BKSP     &lt SYM_L DEL  &bt BT(2)   &bt BT_CLR
 #else
-                      &trans     &trans      &trans          &trans       &mt LSHIFT BKSP &lt NUM_L DEL &trans      &trans
+                      &trans     &trans      &trans          &trans       &mt LSHIFT BKSP &lt SYM_L DEL &trans      &trans
 #endif
             >;
         };
 
-        num_layer {
-            label = "Num";
+        sym_layer {
+            label = "Sym";
             bindings = <
-&kp GRAVE  &kp EXCL   &kp N1     &kp N2      &kp N3    &kp MINUS   &kp C_VOL_DN  &trans         &trans       &trans       &trans     &trans
-&kp TAB    &kp PRCNT  &kp N4     &kp N5      &kp N6    &kp EQUAL   &kp C_VOL_UP  &trans         &trans       &trans       &trans     &trans
-&kp DOT    &kp BSLH   &kp N7     &kp N8      &kp N9    &kp N0      &kp K_MUTE    &trans         &trans       &trans       &trans     &trans
+&kp COLON  &kp EXCL   &kp AT     &kp HASH    &kp DLLR   &kp PRCNT   &kp C_VOL_DN  &trans         &trans       &trans       &trans     &trans
+&kp GRAVE  &kp TAB    &kp LBKT   &kp LPAR    &kp UNDER  &kp MINUS   &kp C_VOL_UP  &trans         &trans       &trans       &trans     &trans
+&kp LT     &kp GT     &kp RBKT   &kp RPAR    &kp PLUS   &kp EQUAL   &kp K_MUTE    &trans         &trans       &trans       &trans     &trans
 #ifdef TBLE_DUAL_2U
                       &trans     &trans          &lt NAV_L DEL             &trans               &trans       &trans
 #elif defined(TBLE_MIT)
@@ -125,54 +123,21 @@
             >;
         };
 
-        sym_layer {
-            label = "Sym";
+        num_layer {
+            label = "Num";
             bindings = <
-&kp TILDE   &kp EXCL   &kp AT     &kp HASH    &kp DLLR     &kp C_BRI_DN  &kp C_VOL_DN &kp UNDER &kp LPAR     &kp LBKT   &kp TILDE &trans
-&kp LS(TAB) &kp PRCNT  &kp CARET  &kp AMPS    &kp ASTRK    &kp C_BRI_UP  &kp C_VOL_UP &kp PLUS  &kp RPAR     &kp RBKT   &trans    &kp COLON
-&kp CAPS    &kp LT     &kp GT     &kp LBRC    &kp RBRC     &kp LG(LC(D)) &kp K_MUTE   &kp INS   &kp HOME     &kp END    &kp LG(LC(SPACE)) &kp LG(LC(SPACE))
+&kp BSLH  &kp EXCL    &kp N1     &kp N2      &kp N3    &kp C_BRI_DN  &kp MINUS   &kp AT     &kp PG_UP   &kp AMPS     &kp TILDE &trans
+&kp TILDE &kp LS(TAB) &kp N4     &kp N5      &kp N6    &kp C_BRI_UP  &kp EQUAL   &kp HOME   &kp PG_DN   &kp END      &trans    &kp COLON
+&kp CAPS  &kp LT      &kp N7     &kp N8      &kp N9    &kp N0        &kp BSLH    &kp GT     &kp LBRC    &kp RBRC     &kp LG(LC(D)) &kp LG(LC(SPACE))
 #ifdef TBLE_DUAL_2U
-                      &trans     &trans               &trans                &trans              &trans       &trans
+                      &trans     &trans               &trans                &trans           &trans       &trans
 #elif defined(TBLE_MIT)
-                      &trans     &trans      &trans               &trans             &trans     &trans       &trans
+                      &trans     &trans      &trans             &trans            &trans     &trans       &trans
 #else
-                      &trans     &trans      &trans       &trans       &trans        &trans     &trans       &trans
-#endif
-            >;
-        };
-	
-        left_home_layer {
-            label = "LeftHome";
-            bindings = <
-&trans    &trans   &trans     &trans      &trans    &trans    &trans  &trans         &trans       &trans       &trans     &trans
-&trans    &trans   &kp LCTRL  &kp LALT    &kp LCMD  &kp LSHFT &trans  &trans         &trans       &trans       &trans     &trans
-&mo LHR_L &trans   &trans     &trans      &trans    &trans    &trans  &trans         &trans       &trans       &trans     &mo RHR_R
-#ifdef TBLE_DUAL_2U
-                   &trans     &trans             &trans            &trans            &trans       &trans
-#elif defined(TBLE_MIT)
-                   &trans     &trans      &trans           &trans     &trans         &trans       &trans
-#else
-                   &trans     &trans      &trans    &trans    &trans  &trans         &trans       &trans
-#endif
-            >;
-        };
-	
-        right_home_layer {
-            label = "RightHome";
-            bindings = <
-&trans    &trans   &trans     &trans      &trans    &trans   &trans    &trans         &trans       &trans       &trans     &trans
-&trans    &trans   &trans     &trans      &trans    &trans   &kp RSHFT &kp RCMD       &kp RALT     &kp RCTRL    &trans     &trans
-&mo LHR_L &trans   &trans     &trans      &trans    &trans   &trans    &trans         &trans       &trans       &trans     &mo RHR_R
-#ifdef TBLE_DUAL_2U
-                   &trans     &trans             &trans           &trans              &trans       &trans
-#elif defined(TBLE_MIT)
-                   &trans     &trans      &trans          &trans       &trans         &trans       &trans
-#else
-                   &trans     &trans      &trans    &trans   &trans    &trans         &trans       &trans
+                      &trans     &trans      &trans    &trans       &trans        &trans     &trans       &trans
 #endif
             >;
         };
 
     };
 };
-
