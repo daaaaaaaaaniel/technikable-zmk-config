@@ -48,6 +48,19 @@
 	};
     };
     
+    // tap-hold
+    behaviors {
+        th: mod_space {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MOD_SPACE";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+    };
+    
     // SPACE on tap, mod-tap space/shift on double-tap
     behaviors {
         td_mt: tap_dance_mod_tap {
@@ -55,7 +68,7 @@
             label = "TAP_DANCE_MOD_TAP";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp SPACE>, <&mt LSHIFT SPACE>;
+            bindings = <&kp SPACE>, <&th LSHIFT SPACE>;
         };
     };
 
@@ -71,7 +84,7 @@
 #ifdef TBLE_DUAL_2U
                        &kp LCTRL  &kp LCMD      &lt NAV_L SPACE                &lt NUM_L SPACE               &kp RCMD    &kp RCTRL
 #elif defined(TBLE_MIT)
-                       &kp LCTRL  &kp LCMD    &mo NAV_L             &td_mt                   &lt NUM_L SPACE &kp RCMD    &kp RCTRL
+                       &kp LCTRL  &kp LCMD    &mo NAV_L             &th LSHIFT SPACE         &lt NUM_L SPACE &kp RCMD    &kp RCTRL
 #else
                        &kp LCTRL  &kp LCMD    &mo NAV_L      &kp SPACE      &kp SPACE        &mo NUM_L       &kp RCMD    &kp RCTRL
 #endif
